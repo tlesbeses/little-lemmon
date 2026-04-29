@@ -1,16 +1,16 @@
-import './App.css';
+import "./App.css";
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
+import { Main } from "./components/Main";
 
 function App() {
   return (
-   <>
-   <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-   </nav>
-   </>
+    <>
+    no funciona
+    <Header />
+    <Main />
+    <Footer />
+    </>
   );
 }
 
