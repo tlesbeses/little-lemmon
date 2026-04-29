@@ -1,16 +1,16 @@
 import { useState } from "react";
+import Logo from "../assets/Logo.svg";
 
-export  function Header() {
+export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-800 text-white">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        
+    <nav className="bg-grayLight text-white">
+      <div className="max-w-container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="font-bold text-lg">MyApp</h1>
+        <img src={Logo} alt="Little Lemon Logo" className="h-10 w-auto" />
 
-        {/* Botón Hamburger */}
+        {/* Hamburger */}
         <button
           className="md:hidden flex flex-col gap-1"
           onClick={() => setOpen(!open)}
@@ -24,29 +24,60 @@ export  function Header() {
         <ul
           className={`
             absolute md:static
-            bg-gray-800
+            bg-primary md:bg-transparent
             left-0 w-full md:w-auto
             flex flex-col md:flex-row
-            items-start gap-4
+            items-start md:items-center
+            gap-4 md:gap-6
+            px-6 md:px-0 py-4 md:py-0
             transition-all duration-300
-            align-initial
-            pl-6
-            ${open ? "top-16 opacity-100" : "top-[-300px] opacity-0 md:opacity-100"}
+            ${open ? "top-16 opacity-100" : "top-[-400px] opacity-0 md:opacity-100"}
           `}
         >
           <li>
-            <a href="/" className="block p-2 hover:text-yellow-400">
+            <a
+              href="/"
+              className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors"
+            >
               Home
             </a>
           </li>
           <li>
-            <a href="/about" className="block p-2 hover:text-yellow-400">
+            <a
+              href="/about"
+              className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors"
+            >
               About
             </a>
           </li>
           <li>
-            <a href="/contact" className="block p-2 hover:text-yellow-400">
-              Contact
+            <a
+              href="/menu"
+              className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors"
+            >
+              Menu
+            </a>
+          </li>
+          <li>
+            <a
+              href="/reservations"
+              className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors"
+            >
+              Reservations
+            </a>
+          </li>
+          <li>
+            <a
+              href="/order" className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors">
+              Order Online
+            </a>
+          </li>
+          <li>
+            <a
+              href="/login"
+              className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors"
+            >
+              Login
             </a>
           </li>
         </ul>

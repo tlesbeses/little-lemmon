@@ -12,21 +12,20 @@ function App() {
       grid-rows-[auto_1fr_auto]
     ">
       {/* Header */}
-      <header className="bg-gray-800 text-white p-4">
+      <header >
         <Header />
       </header>
 
       {/* Main */}
-      <main className="p-4">
+      <main >
         <Main />
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-200 p-4">
+      <footer>
         <Footer />
       </footer>
     </div>
-  );
     </>
   );
 }
