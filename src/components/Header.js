@@ -23,21 +23,29 @@ export function Header() {
         {/* Menu */}
         <ul
           className={`
-            absolute md:static
-            bg-primary md:bg-transparent
-            left-0 w-full md:w-auto
-            flex flex-col md:flex-row
-            items-start md:items-center
-            gap-4 md:gap-6
-            px-6 md:px-0 py-4 md:py-0
-            transition-all duration-300
-            ${open ? "top-16 opacity-100" : "top-[-400px] opacity-0 md:opacity-100"}
-          `}
+  absolute md:static
+  bg-grayLight md:bg-transparent
+  left-0 w-full md:w-auto
+  
+  flex flex-col md:flex-row
+  items-stretch md:items-center
+  gap-2 md:gap-6
+  
+  px-4 md:px-0 py-4 md:py-0 pl-6 md:pl-0
+
+   divide-y divide-gray-300 md:divide-none
+  
+  rounded-b-xl md:rounded-none
+  shadow-md md:shadow-none
+  
+  transition-all duration-300
+  ${open ? "top-16 opacity-100" : "top-[-400px] opacity-0 md:opacity-100"}
+`}
         >
           <li>
             <a
               href="/"
-              className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors"
+              className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
             >
               Home
             </a>
@@ -45,7 +53,7 @@ export function Header() {
           <li>
             <a
               href="/about"
-              className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors"
+              className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
             >
               About
             </a>
@@ -53,7 +61,7 @@ export function Header() {
           <li>
             <a
               href="/menu"
-              className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors"
+              className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
             >
               Menu
             </a>
@@ -61,21 +69,23 @@ export function Header() {
           <li>
             <a
               href="/reservations"
-              className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors"
+              className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
             >
               Reservations
             </a>
           </li>
           <li>
             <a
-              href="/order" className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors">
+              href="/order"
+              className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
+            >
               Order Online
             </a>
           </li>
           <li>
             <a
               href="/login"
-              className="text-gray-900 font-medium text-sm md:text-base hover:text-green-700 transition-colors"
+              className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
             >
               Login
             </a>
