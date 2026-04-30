@@ -1,13 +1,13 @@
 import React from 'react';
 
 const testimonials = [
-  { id: 1, rating: "5/5", name: "Alex P.", review: "Great food!", img: "https://via.placeholder.com/100" },
-  { id: 2, rating: "4/5", name: "Maria R.", review: "Loved the atmosphere.", img: "https://via.placeholder.com/100" },
-  { id: 3, rating: "5/5", name: "John D.", review: "Best lemon pasta ever.", img: "https://via.placeholder.com/100" },
-  { id: 4, rating: "5/5", name: "Sara L.", review: "Highly recommended!", img: "https://via.placeholder.com/100" },
+  { id: 1, rating: "5/5", name: "Alex P.", review: "Great food!", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+  { id: 2, rating: "4/5", name: "Maria R.", review: "Loved the atmosphere.", img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+  { id: 3, rating: "5/5", name: "John D.", review: "Best lemon pasta ever.", img: "https://images.unsplash.com/photo-1634749724102-f89da39ec545?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+  { id: 4, rating: "5/5", name: "Sara L.", review: "Highly recommended!", img: "https://images.unsplash.com/photo-1605993439219-9d09d2020fa5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
 ];
 
-const Testimonials = () => {
+export function Testimonials() {
   return (
     <section className="bg-primary py-18 px-4">
       <div className="max-w-container mx-auto">
@@ -29,4 +29,3 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;

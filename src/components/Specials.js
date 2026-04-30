@@ -1,5 +1,5 @@
-import lemmonDessert from "../assets/lemonDessert.jpg"
-import greekSalad from "../assets/greekSalad.jpg"
+import lemmonDessert from "../assets/img/lemonDessert.jpg"
+import greekSalad from "../assets/img/greekSalad.jpg"
 
 export function Specials() {
 
