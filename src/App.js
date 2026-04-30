@@ -1,32 +1,18 @@
 import "./App.css";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
+import { Layout } from "./components/Layout";
 import { Main } from "./components/Main";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <>
-    <div className="
-      min-h-screen 
-      grid 
-      grid-rows-[auto_1fr_auto]
-    ">
-      {/* Header */}
-      <header >
-        <Header />
-      </header>
-
-      {/* Main */}
-      <main >
-        <Main />
-      </main>
-
-      {/* Footer */}
-      <footer>
-        <Footer />
-      </footer>
-    </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Main />} />
+          <Route path="/booking" element={<div>About Page</div>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
