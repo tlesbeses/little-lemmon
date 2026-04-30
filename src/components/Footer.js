@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../assets/svg/Logo.svg";
 export function Footer() {
   return (
@@ -16,12 +17,12 @@ export function Footer() {
         <div>
           <h4 className="font-bold text-grayDark mb-4">Doormat Navigation</h4>
           <ul className="space-y-2 text-small text-grayDark font-sans">
-            <li><a href="/" className="hover:text-primary">Home</a></li>
-            <li><a href="/about" className="hover:text-primary">About</a></li>
-            <li><a href="/menu" className="hover:text-primary">Menu</a></li>
-            <li><a href="/reservations" className="hover:text-primary">Reservations</a></li>
-            <li><a href="/order" className="hover:text-primary">Order Online</a></li>
-            <li><a href="/login" className="hover:text-primary">Login</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/">About</Link></li>
+            <li><Link to="/">Menu</Link></li>
+            <li><Link to="/booking">Reservations</Link></li>
+            <li><Link to="/">Order Online</Link></li>
+            <li><Link to="/">Login</Link></li>
           </ul>
         </div>
 
