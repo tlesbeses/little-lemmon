@@ -1,6 +1,7 @@
 // src/components/Hero.jsx
 import React from "react";
 import HeroImage from "../assets/img/heroimg.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -22,7 +23,7 @@ const Hero = () => {
           </p>
 
           <button className="mt-6 bg-[#F4CE14] text-black px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-            Reserve Table
+            <Link to="/booking">Reserve a Table</Link>
           </button>
         </div>
 

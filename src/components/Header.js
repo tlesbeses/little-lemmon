@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Logo from "../assets/svg/Logo.svg";
+import { Link } from "react-router-dom";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -43,52 +44,52 @@ export function Header() {
 `}
         >
           <li>
-            <a
-              href="/"
+            <Link
+              to="/"
               className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/about"
+            <Link
+              to="/"
               className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
             >
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/menu"
+            <Link
+              to="/"
               className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
             >
               Menu
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/reservations"
+            <Link
+              to="/booking"
               className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
             >
               Reservations
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/order"
+            <Link
+              to="/"
               className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
             >
               Order Online
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/login"
+            <Link
+              to="/"
               className="text-gray-900 font-medium text-sm md:text-base font-sans hover:text-green-600 hover:scale-105 transition-all duration-200 ease-in-out inline-block"
             >
               Login
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
