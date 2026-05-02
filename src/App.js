@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import ReservationForm from "./components/ReservationForm";
 import { useReducer } from "react";
 import { fetchAPI } from "./api/api";
+import ConfirmedBooking from "./components/ConfirmedBooking";
 
 export const initializeTimes = () => {
   const today = new Date();
@@ -30,6 +31,8 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Main />} />
           <Route path="/booking" element={<ReservationForm  availableTimes={availableTimes} dispatch={dispatch}/>} />
+          <Route path="/confirmed" element={<ConfirmedBooking />} />
+
         </Route>
       </Routes>
   );

@@ -19,6 +19,9 @@ export const fetchAPI = function (date) {
       result.push(i + ":30");
     }
   }
+  console.log("fetchAPI called with date:", date,);
+  console.log("Available times returned:", result);
+
   return result;
 };
 
