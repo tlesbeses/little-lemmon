@@ -18,15 +18,16 @@ const getLocalNow = () => {
   };
 };
 
-export default function ReservationForm({ availableTimes = [], dispatch, submitForm }) {
+export default function ReservationForm({ availableTimes = [], dispatch, onSubmit }) {
   const { date: todayStr } = getLocalNow();
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors ,isValid},
   } = useForm({
     resolver: zodResolver(bookingFormSchema),
+    mode: "onChange",
     defaultValues: {
       guests: 1,
     },
@@ -43,7 +44,7 @@ export default function ReservationForm({ availableTimes = [], dispatch, submitF
         </header>
 
         <form
-          onSubmit={handleSubmit(submitForm)}
+          onSubmit={handleSubmit(onSubmit)}
           className="grid gap-6 md:grid-cols-2"
         >
           {/* Fecha */}
@@ -152,10 +153,21 @@ export default function ReservationForm({ availableTimes = [], dispatch, submitF
           <div className="md:col-span-2 mt-4">
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 active:scale-[0.98] transition-all shadow-lg"
+              disabled={!isValid}
+              className={`w-full font-bold py-4 rounded-xl transition-all shadow-lg ${
+                isValid
+                  ? "bg-blue-600 hover:bg-blue-700 text-white"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }`}
             >
               Confirm Booking
             </button>
+
+            {!isValid && (
+              <p className="text-sm text-gray-500 text-center mt-2">
+                Please complete all fields correctly
+              </p>
+            )}
           </div>
         </form>
       </div>
