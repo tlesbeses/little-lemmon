@@ -4,9 +4,11 @@ import { Main } from "./components/Main";
 import { Route, Routes } from "react-router-dom";
 import ReservationForm from "./components/ReservationForm";
 import { useReducer } from "react";
+import { fetchAPI } from "./api/api";
 
 export const initializeTimes = () => {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  const today = new Date();
+  return fetchAPI(today);
 };
 
 
@@ -14,7 +16,7 @@ export const updateTimes = (state, action) => {
   switch (action.type) {
     case "UPDATE_TIMES":
       // console.log("Fecha seleccionada enviada al reducer:", action.date);
-      return state;
+      return fetchAPI(new Date(action.date));
     default:
       return state;
   }

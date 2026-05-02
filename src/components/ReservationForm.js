@@ -37,7 +37,6 @@ export default function ReservationForm({ availableTimes, dispatch }) {
     alert("¡Reserva exitosa!");
   };
 
-  // Min dinámico para el atributo HTML
 
   return (
     <section className="min-h-screen bg-gray-100 py-12 px-4 flex items-center justify-center font-sans">
@@ -62,7 +61,16 @@ export default function ReservationForm({ availableTimes, dispatch }) {
               id="date"
               type="date"
               min={todayStr}
-              {...register("date")}
+              {...register("date", {
+                onChange: (e) => {
+                  const selectedDate = e.target.value;
+
+                  dispatch({
+                    type: "UPDATE_TIMES",
+                    date: selectedDate,
+                  });
+                },
+              })}
               className={`p-3 rounded-lg border outline-none transition-all focus:ring-2 focus:ring-blue-400 ${
                 errors.date ? "border-red-500 shadow-sm" : "border-gray-300"
               }`}
@@ -99,7 +107,10 @@ export default function ReservationForm({ availableTimes, dispatch }) {
 
           {/* Personas */}
           <div className="flex flex-col">
-            <label htmlFor="guests" className="font-semibold text-gray-700 mb-2">
+            <label
+              htmlFor="guests"
+              className="font-semibold text-gray-700 mb-2"
+            >
               Number of Guests
             </label>
             <input
@@ -119,7 +130,10 @@ export default function ReservationForm({ availableTimes, dispatch }) {
 
           {/* Ocasión */}
           <div className="flex flex-col">
-            <label htmlFor="occasion" className="font-semibold text-gray-700 mb-2">
+            <label
+              htmlFor="occasion"
+              className="font-semibold text-gray-700 mb-2"
+            >
               Occasion
             </label>
             <select
