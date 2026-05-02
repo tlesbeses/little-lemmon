@@ -23,7 +23,7 @@ import ReservationForm from "../components/ReservationForm";
   });
 
   fireEvent.change(screen.getByLabelText(/number of guests/i), {
-  target: { value: "2" },
+  target: { value: 2 },
 });
 
   fireEvent.change(screen.getByLabelText(/occasion/i), {
