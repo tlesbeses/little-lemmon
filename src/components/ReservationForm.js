@@ -18,7 +18,7 @@ const getLocalNow = () => {
   };
 };
 
-export default function ReservationForm({ availableTimes, dispatch }) {
+export default function ReservationForm({ availableTimes = [], dispatch, submitForm }) {
   const { date: todayStr } = getLocalNow();
 
   const {
@@ -31,13 +31,7 @@ export default function ReservationForm({ availableTimes, dispatch }) {
       guests: 1,
     },
   });
-
-  const onSubmit = (data) => {
-    console.log("Reserva confirmada:", data);
-    alert("¡Reserva exitosa!");
-  };
-
-
+   
   return (
     <section className="min-h-screen bg-gray-100 py-12 px-4 flex items-center justify-center font-sans">
       <div className="w-full max-w-2xl bg-white p-8 shadow-xl rounded-2xl">
@@ -49,7 +43,7 @@ export default function ReservationForm({ availableTimes, dispatch }) {
         </header>
 
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(submitForm)}
           className="grid gap-6 md:grid-cols-2"
         >
           {/* Fecha */}
