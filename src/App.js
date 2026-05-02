@@ -13,7 +13,7 @@ export const initializeTimes = () => {
 export const updateTimes = (state, action) => {
   switch (action.type) {
     case "UPDATE_TIMES":
-      console.log("Fecha seleccionada enviada al reducer:", action.date);
+      // console.log("Fecha seleccionada enviada al reducer:", action.date);
       return state;
     default:
       return state;

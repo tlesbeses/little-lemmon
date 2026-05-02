@@ -1,46 +1,38 @@
-import {render, screen } from "@testing-library/react";
-import App from "../App";
-import { MemoryRouter } from "react-router-dom";
-import { initializeTimes, updateTimes } from "../App";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import ReservationForm from "../components/ReservationForm";
 
-test('renders booking page', () => {
+  test("form can be submitted", async () => {
+  const availableTimes = ["17:00", "18:00"];
+  const dispatch = jest.fn();
+
+  window.alert = jest.fn();
+
   render(
-    <MemoryRouter initialEntries={['/booking']}>
-      <App />
-    </MemoryRouter>
+    <ReservationForm
+      availableTimes={availableTimes}
+      dispatch={dispatch}
+    />
   );
 
-  const heading = screen.getByRole("heading", {
-    name: /reserve a table/i,
+  fireEvent.change(screen.getByLabelText(/date/i), {
+    target: { value: "2026-05-10" },
   });
 
-  expect(heading).toBeInTheDocument();
+  fireEvent.change(screen.getByLabelText(/time/i), {
+    target: { value: "17:00" },
+  });
+
+  fireEvent.change(screen.getByLabelText(/number of guests/i), {
+  target: { value: "2" },
 });
 
-// describe("initializeTimes", () => {
-//   test("returns the correct initial times", () => {
-//     const expectedTimes = [
-//       "17:00",
-//       "18:00",
-//       "19:00",
-//       "20:00",
-//       "21:00",
-//       "22:00",
-//     ];
+  fireEvent.change(screen.getByLabelText(/occasion/i), {
+    target: { value: "Birthday" },
+  });
 
-//     const result = initializeTimes();
+  fireEvent.click(screen.getByRole("button", { name: /confirm booking/i }));
 
-//     expect(result).toEqual(expectedTimes);
-//   });
-// });
-
-// describe("updateTimes", () => {
-//   test("returns the same state that is passed in", () => {
-//     const state = ["17:00", "18:00"];
-//     const action = { type: "UPDATE_TIMES", date: "2026-05-01" };
-
-//     const result = updateTimes(state, action);
-
-//     expect(result).toEqual(state);
-//   });
-// });
+  await waitFor(() => {
+    expect(window.alert).toHaveBeenCalled();
+  });
+});
