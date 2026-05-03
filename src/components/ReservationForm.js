@@ -55,6 +55,8 @@ export default function ReservationForm({ availableTimes = [], dispatch, onSubmi
             <input
               id="date"
               type="date"
+              aria-required="true"
+              aria-invalid={errors.date ? "true" : "false"}
               min={todayStr}
               {...register("date", {
                 onChange: (e) => {
@@ -84,6 +86,8 @@ export default function ReservationForm({ availableTimes = [], dispatch, onSubmi
             </label>
             <select
               id="time"
+              aria-required="true"
+              aria-invalid={errors.time ? "true" : "false"}
               {...register("time")}
               className="p-3 rounded-lg border border-grayLight focus:ring-2 focus:ring-primary"
             >
@@ -111,6 +115,8 @@ export default function ReservationForm({ availableTimes = [], dispatch, onSubmi
             <input
               id="guests"
               type="number"
+              aria-required="true"
+              aria-invalid={errors.guests ? "true" : "false"}
               {...register("guests", { valueAsNumber: true })}
               className={`p-3 rounded-lg border outline-none transition-all focus:ring-2 focus:ring-blue-400 ${
                 errors.guests ? "border-red-500 shadow-sm" : "border-gray-300"
@@ -133,6 +139,8 @@ export default function ReservationForm({ availableTimes = [], dispatch, onSubmi
             </label>
             <select
               id="occasion"
+              aria-required="true"
+              aria-invalid={errors.occasion ? "true" : "false"}
               {...register("occasion")}
               className={`p-3 rounded-lg border outline-none transition-all focus:ring-2 focus:ring-blue-400 ${
                 errors.occasion ? "border-red-500 shadow-sm" : "border-gray-300"
@@ -154,6 +162,7 @@ export default function ReservationForm({ availableTimes = [], dispatch, onSubmi
             <button
               type="submit"
               disabled={!isValid}
+              aria-label="On Click"
               className={`w-full font-bold py-4 rounded-xl transition-all shadow-lg ${
                 isValid
                   ? "bg-blue-600 hover:bg-blue-700 text-white"
